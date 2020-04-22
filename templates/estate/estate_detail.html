@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="estate-entry">
+  <h2>{{ object.title }}</h2>
+  <p><strong>Managed by: </strong> {{ object.manager }}</p>
+  <p><strong>Created on: </strong> {{ object.date_created }}</p>
+  <p>{{ object.description }}</p>
+</div>
+<p><a href="{% url 'estate_edit' estate.pk %}">Edit</a> |
+  <a href="{% url 'estate_delete' estate.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'estate_list' %}">My Estates</a>.</p>
+{% endblock content %}

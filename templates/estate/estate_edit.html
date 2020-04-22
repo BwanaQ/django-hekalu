@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Editing Estate</h1>
+<form action="" method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-info ml- " type="submit">Update</button>
+</form>
+<a class="btn btn-warning ml- " href="{% url 'estate_list' %}">
+  < Back to Estates </a>
+    {% endblock content %}

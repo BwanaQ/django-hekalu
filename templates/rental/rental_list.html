@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Rentals{% endblock title %}
+{% block content %}
+
+<h1>Viewing Rentals</h1>
+<a href="{% url 'estate_list'%}">Back To My Estates </a>|
+
+{% for rental in object_list %}
+
+<div class="card">
+  <div class="card-header">
+    <span class="font-weight-bold">{{ rental.title }}</span> </br>
+  </div>
+  <div class="card-body">
+    {{rental.description}}</br>
+    <p><strong>Estate:</strong> {{rental.estate.title}}</p>
+  </div>
+  <div class="card-footer text-center text-muted">
+    <a href="{% url 'rental_edit' rental.pk %}">Edit</a> |
+    <a href="{% url 'rental_delete' rental.pk %}">Delete</a>|
+
+  </div>
+</div>
+<br />
+{% endfor %}
+{% endblock content %}

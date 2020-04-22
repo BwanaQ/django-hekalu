@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="rental-entry">
+  <h2>{{ object.title }}</h2>
+  <p>{{ object.description }}</p>
+  <p><strong>Rent: </strong> {{ object.rent}}</p>
+  <p><strong>Is Occupied: </strong> {{ object.is_occupied}}</p>
+</div>
+<p><a href="{% url 'rental_edit' rental.pk %}">Edit</a> |
+  <a href="{% url 'rental_delete' rental.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'rental_list' rental.estate.pk %}">My Units</a>.</p>
+{% endblock content %}

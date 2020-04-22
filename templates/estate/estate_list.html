@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Estates{% endblock title %}
+{% block content %}
+<a href="{% url 'estate_new' %}">+ New Estate</a></br>
+<a href="{% url 'home' %}"> Home</a>
+
+{% for estate in object_list %}
+<div class="card">
+  <div class="card-header">
+    <span class="font-weight-bold">{{ estate.title }}</span> </br>
+    <span class="text-muted">Managed By {{ estate.manager }} </span>
+  </div>
+  <div class="card-body">
+    {{ estate.description }}
+  </div>
+  <div class="card-footer text-center text-muted">
+    <a href="{% url 'estate_edit' estate.pk %}">Edit</a> |
+    <a href="{% url 'estate_delete' estate.pk %}">Delete</a>|
+    <a href="{% url 'rental_list' estate.pk %}">View Rentals</a> |
+    <a href="{% url 'rental_new' estate.pk %}"> New Rental</a>
+
+
+  </div>
+</div>
+<br />
+{% endfor %}
+{% endblock content %}
