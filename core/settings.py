@@ -41,9 +41,15 @@ INSTALLED_APPS = [
     # Local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
-    'rentals.apps.RentalsConfig'
+    'rentals.apps.RentalsConfig',
+    
+
+    # Last App
+    'notifications',
 
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
