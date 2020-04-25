@@ -22,6 +22,5 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     path('rentals/', include('rentals.urls')),
     path('', include('pages.urls')), # new
-    path('inbox/notifications', include('notifications.urls', namespace='notifications')),
 
 ]

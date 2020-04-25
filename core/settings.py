@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     
 
     # Last App
-    'notifications',
 
 ]
 
